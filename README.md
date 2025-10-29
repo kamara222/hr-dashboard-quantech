@@ -21,3 +21,8 @@ Application web full-stack de gestion RH (React + Node.js + CSS)
 cd frontend
 npm install
 npm run dev
+
+
+### URLs :
+- **Frontend** : http://localhost:3000
+- **Backend API** : http://localhost:5001/api/employees
