@@ -8,12 +8,12 @@ import AnnouncementList from '../components/AnnouncementList';
 import ScheduleList from '../components/ScheduleList';
 import { Briefcase, Users } from 'lucide-react';
 
-const Dashboard = () => {
+const Dashboard = ({onMenuClick}) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="app-container">
-      <Sidebar isOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      <Sidebar isOpen={sidebarOpen} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} onMenuClick={onMenuClick} />
       <div className="main-content">
         <Header toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         <main className="dashboard-container">

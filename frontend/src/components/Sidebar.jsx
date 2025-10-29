@@ -1,14 +1,15 @@
+// src/components/Sidebar.jsx
 import React, { useState } from 'react';
 import { LayoutDashboard, Users, Calendar, Briefcase, Building2, Headphones, Settings, X } from 'lucide-react';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar, onMenuClick }) => {  // ← AJOUT
   const [activeItem, setActiveItem] = useState('Dashboard');
 
   const mainMenu = [
     { icon: LayoutDashboard, label: 'Dashboard' },
     { icon: Users, label: 'Recruitment' },
     { icon: Calendar, label: 'Schedule' },
-    { icon: Briefcase, label: 'Employee' },
+    { icon: Briefcase, label: 'Employee' },    // ← CELUI-LÀ
     { icon: Building2, label: 'Department' },
   ];
 
@@ -16,6 +17,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { icon: Headphones, label: 'Support' },
     { icon: Settings, label: 'Settings' },
   ];
+
+  const handleClick = (label) => {
+    setActiveItem(label);
+    onMenuClick(label);  // ← ENVOIE AU PARENT
+  };
 
   return (
     <>
@@ -34,7 +40,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <li key={item.label}>
                 <div
                   className={`nav-link ${activeItem === item.label ? 'active' : ''}`}
-                  onClick={() => setActiveItem(item.label)}
+                  onClick={() => handleClick(item.label)}  // ← CLIC
                 >
                   <item.icon size={20} />
                   <span>{item.label}</span>
@@ -47,7 +53,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <ul>
             {otherMenu.map((item) => (
               <li key={item.label}>
-                <div className="nav-link" onClick={() => setActiveItem(item.label)}>
+                <div className="nav-link" onClick={() => handleClick(item.label)}>
                   <item.icon size={20} />
                   <span>{item.label}</span>
                 </div>

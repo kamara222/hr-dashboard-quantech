@@ -1,10 +1,8 @@
-const EmployeeTable = () => {
-  const employees = [
-    { id: 1, name: 'Jean Dupont', email: 'jean@quantech.com', role: 'Développeur', dept: 'IT' },
-    { id: 2, name: 'Marie Curie', email: 'marie@quantech.com', role: 'RH', dept: 'Ressources Humaines' },
-    { id: 3, name: 'Paul Martin', email: 'paul@quantech.com', role: 'Manager', dept: 'IT' },
-  ];
+// src/components/EmployeeTable.jsx
+import React from 'react';
+import { Edit2, Trash2 } from 'lucide-react';
 
+const EmployeeTable = ({ employees, onEdit, onDelete }) => {
   return (
     <div className="table-container">
       <table className="employee-table">
@@ -23,10 +21,14 @@ const EmployeeTable = () => {
               <td>{emp.name}</td>
               <td>{emp.email}</td>
               <td>{emp.role}</td>
-              <td>{emp.dept}</td>
-              <td>
-                <button className="btn-edit">Modifier</button>
-                <button className="btn-delete">Supprimer</button>
+              <td>{emp.department}</td>
+              <td className="actions">
+                <button onClick={() => onEdit(emp)} className="icon-btn">
+                  <Edit2 size={16} />
+                </button>
+                <button onClick={() => onDelete(emp.id)} className="icon-btn delete">
+                  <Trash2 size={16} />
+                </button>
               </td>
             </tr>
           ))}
