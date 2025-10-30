@@ -17,32 +17,26 @@ const ScheduleList = () => {
         </select>
       </div>
       
-      {items[0].priority && <span className="priority-tag">Priority</span>}
       <ul>
-        <li className="list-item">
-          <div className="item-content">
-            <div className="item-title">{items[0].title}</div>
-            <div className="item-time">{items[0].time}</div>
-          </div>
-          <button className="more-btn"><MoreHorizontal size={16} /></button>
-        </li>
-        
-        <li className="list-item" style={{ marginTop: '1rem' }}>
-          <div className="item-content">
-            <div style={{ fontSize: '0.85rem', color: '#999', marginBottom: '0.5rem' }}>Other</div>
-            <div className="item-title">{items[1].title}</div>
-            <div className="item-time">{items[1].time}</div>
-          </div>
-          <button className="more-btn"><MoreHorizontal size={16} /></button>
-        </li>
-        
-        <li className="list-item">
-          <div className="item-content">
-            <div className="item-title">{items[2].title}</div>
-            <div className="item-time">{items[2].time}</div>
-          </div>
-          <button className="more-btn"><MoreHorizontal size={16} /></button>
-        </li>
+        {items.map((item, index) => (
+          <li key={index} className="list-item">
+            {index === 0 && item.priority && <span className="priority-tag">Priority</span>}
+            
+            {item.category && (
+              <div className="schedule-category">{item.category}</div>
+            )}
+            
+            <div className="list-item-wrapper">
+              <div className="item-content">
+                <div className="item-title">{item.title}</div>
+                <div className="item-time">{item.time}</div>
+              </div>
+              <div className="item-actions">
+                <button className="more-btn"><MoreHorizontal size={16} /></button>
+              </div>
+            </div>
+          </li>
+        ))}
       </ul>
       <a href="#" className="see-all-link">Creat a New Schedule</a>
     </div>

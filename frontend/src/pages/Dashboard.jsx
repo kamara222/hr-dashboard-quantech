@@ -26,6 +26,7 @@ const Dashboard = ({onMenuClick}) => {
               value="24"
               subtitle="4 Urgently needed"
               color="#ff6b6b"
+              backgroundColor="#FFEFE7"
               icon={Briefcase}
             />
             <Card
@@ -33,6 +34,7 @@ const Dashboard = ({onMenuClick}) => {
               value="10"
               subtitle="4 Active hiring"
               color="#3b82f6"
+              backgroundColor="#E8F0FB"
               icon={Briefcase}
             />
             <Card
@@ -40,6 +42,7 @@ const Dashboard = ({onMenuClick}) => {
               value="24"
               subtitle="4 Department"
               color="#ec4899"
+              backgroundColor="#FDEEF7"
               icon={Users}
             />
           </div>

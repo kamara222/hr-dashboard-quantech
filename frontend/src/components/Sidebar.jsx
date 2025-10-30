@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
-// 🖼️ Importation des images depuis ton dossier assets
 import dashboardImg from '../assets/Dashboard.png';
 import recruitmentImg from '../assets/Recruitment.png';
 import scheduleImg from '../assets/Schedule.png';
@@ -14,7 +13,6 @@ import settingsImg from '../assets/Settings.png';
 const Sidebar = ({ isOpen, toggleSidebar, onMenuClick }) => {
   const [activeItem, setActiveItem] = useState('Dashboard');
 
-  // 🧭 Menu principal
   const mainMenu = [
     { icon: dashboardImg, label: 'Dashboard' },
     { icon: recruitmentImg, label: 'Recruitment' },
@@ -23,7 +21,6 @@ const Sidebar = ({ isOpen, toggleSidebar, onMenuClick }) => {
     { icon: departmentImg, label: 'Department' },
   ];
 
-  // ⚙️ Autre menu
   const otherMenu = [
     { icon: supportImg, label: 'Support' },
     { icon: settingsImg, label: 'Settings' },
@@ -45,7 +42,6 @@ const Sidebar = ({ isOpen, toggleSidebar, onMenuClick }) => {
         </div>
 
         <nav className="sidebar-nav">
-          {/* SECTION PRINCIPALE */}
           <span className="menu-title">MAIN MENU</span>
           <ul>
             {mainMenu.map((item) => (
@@ -65,7 +61,6 @@ const Sidebar = ({ isOpen, toggleSidebar, onMenuClick }) => {
             ))}
           </ul>
 
-          {/* AUTRE SECTION */}
           <span className="menu-title">OTHER</span>
           <ul>
             {otherMenu.map((item) => (

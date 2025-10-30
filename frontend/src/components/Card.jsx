@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Card = ({ title, value, subtitle, color, icon: Icon }) => {
+const Card = ({ title, value, subtitle, color, icon: Icon, backgroundColor }) => {
   return (
-    <div className="simple-card">
+    <div className="simple-card" style={{ backgroundColor }}>
       {/* <div className="card-icon-wrapper" style={{ background: color }}>
         {Icon && <Icon size={28} color={color} style={{ opacity: 1 }} />}
       </div> */}

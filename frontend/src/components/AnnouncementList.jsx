@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoreHorizontal } from 'lucide-react';
+import { MoreHorizontal, Pin } from 'lucide-react';
 
 const AnnouncementList = () => {
   const announcements = [
@@ -19,14 +19,16 @@ const AnnouncementList = () => {
       <ul>
         {announcements.map((item, index) => (
           <li key={index} className="list-item">
-            <div className="item-content">
-              <div className="item-title">{item.title}</div>
-              <div className="item-time">{item.time}</div>
-            </div>
-            <div className="item-actions">
-              <button className="pin-btn">Pin</button>
-              <button className="more-btn"><MoreHorizontal size={16} /></button>
-            </div>
+            <div className="list-item-wrapper"> 
+              <div className="item-content">
+                <div className="item-title">{item.title}</div>
+                <div className="item-time">{item.time}</div>
+              </div>
+              <div className="item-actions">
+                <button className="pin-btn"><Pin size={16} /></button>
+                <button className="more-btn"><MoreHorizontal size={16} /></button>
+              </div>
+            </div> 
           </li>
         ))}
       </ul>

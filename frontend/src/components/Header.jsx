@@ -8,9 +8,10 @@ const Header = ({ toggleSidebar }) => {
         <button className="menu-toggle" onClick={toggleSidebar}>
           <Menu size={24} />
         </button>
-        <div className="search-container">
+        <div className="search-container">  
           <Search size={18} className="search-icon" />
           <input type="text" placeholder="Search" />
+        
         </div>
       </div>
 
