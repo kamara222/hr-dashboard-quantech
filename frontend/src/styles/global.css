@@ -17,7 +17,7 @@ body {
 /* SIDEBAR */
 .sidebar {
   width: 240px;
-  background: #2c3e50;
+  background: #FAFAFA;
   color: white;
   padding: 1.5rem 1rem;
   position: fixed;
@@ -38,7 +38,7 @@ body {
 .sidebar-header h1 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: white;
+  color: #686868;
 }
 
 .close-sidebar {
